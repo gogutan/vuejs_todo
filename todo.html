@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ToDoリスト</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+  <div class="content">
+    <h1 class="title is-2">ToDoリスト</h1>
+    <div id="todoForm">
+      <input class="input is-primary" type="text" id="todo" placeholder="ToDo">
+      <button class="button is-primary is-outlined" id="addBtn">追加</button>
+    </div>
+    <div id="todoArea">
+      <ol type="1">
+        <li v-for="(todo, index) in todos">
+          {{ todo.text }}
+          <button class="button is-success" v-on:click="deleteTodo(index)">Done!</button>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
